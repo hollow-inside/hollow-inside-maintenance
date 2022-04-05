@@ -1,0 +1,43 @@
+// Font Awesome Free
+$fa-font-path: "/assets/fonts/fontawesome-free";
+
+// Body & font
+$font-special-elite:           'Special Elite', cursive;
+$font-hammersmith-one:         'Hammersmith One', sans-serif;
+$font-family-sans-serif:        $font-hammersmith-one;
+
+$fonts: (
+    "special-elite":        $font-special-elite,
+    "hammersmith-one":      $font-hammersmith-one
+);
+
+// Colors
+@import "../../../../node_modules/st3phhays-assets/css/scss/variables/colors";
+
+// Theme names
+$headwound:         "head-wound";
+
+// Theme map
+$themes: (
+    $headwound: (
+        "gray":       $gray-stone,
+        "white":      $white-marshmallow,
+        "black":      $black-jet,
+        "main":       $black-jet,
+        "opposite":   $white-marshmallow
+    )
+);
+
+// Maps
+@import "../../../../node_modules/st3phhays-assets/css/scss/variables/maps";
+
+// Global
+@import "../../../../node_modules/st3phhays-assets/css/scss/variables/global";
+
+// Buttons
+$btn-border-radius:     0;
+$btn-border-radius-sm:  0;
+$btn-border-radius-lg:  0;
+
+// Borders
+$border-color:          var(--#{$variable-prefix}gamma);

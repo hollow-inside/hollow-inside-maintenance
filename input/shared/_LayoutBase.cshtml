@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-sh-theme="head-wound" data-sh-theme-mode="dark">
+<head>
+    @{
+        string title = Document.Keys.Contains(Keys.Title) ? "Hollow Inside | " + Document.GetString(Keys.Title) : "Hollow Inside";
+        string description = Document.ContainsKey(Keys.Excerpt) ? Document.GetString(Keys.Excerpt) : "Coming Soon";
+        string ogImage = Document.ContainsKey("OgImage") ? Document.GetString("OgImage") : "hollow-inside-og.png";
+        string baseUrl = Context.GetLink().TrimEnd('/');
+    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff">
+    @RenderSection("ExtraHeaders", required: false)
+    <meta name="description" content="@description" />
+    @* Open Graph data *@
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:image" content='@baseUrl/assets/images/social-share/@ogImage' />
+    <meta property="og:site_name" content="Hollow Inside" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@baseUrl@Document.GetLink()" />
+    @* Twitter Card data *@
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@@hollowinsideofficial">
+    <meta name="twitter:creator" content="@@hollowinsideofficial">
+    @* Apple Touch and Favicons *@
+    <link rel="icon" type="image/png" sizes="16x16" href='@baseUrl/favicon-16x16.png'>
+    <link rel="icon" type="image/png" sizes="32x32" href='@baseUrl/favicon-32x32.png'>
+    <link rel="icon" type="image/png" sizes="96x96" href='@baseUrl/favicon-96x96.png'>
+    <link rel="apple-touch-icon" href='@baseUrl/apple-touch-icon.png' />
+    <link rel="apple-touch-icon" sizes="152x152" href='@baseUrl/apple-touch-icon-152x152.png' />
+    <link rel="apple-touch-icon" sizes="167x167" href='@baseUrl/apple-touch-icon-167x167.png' />
+    <link rel="apple-touch-icon" sizes="180x180" href='@baseUrl/apple-touch-icon-180x180.png' />
+    <link rel="manifest" href="@baseUrl/site.webmanifest">
+    <title>@title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='@Context.GetLink("/assets/css/hollowinsidemaintenance.bundle.min.css")'>
+    @*<script type="text/javascript" src='@Context.GetLink("/assets/js/hollowinsidemaintenance.head.bundle.min.js")'></script>*@
+</head>
+<body>
+    @*<noscript><iframe src="" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>*@
+    @*<div id="fb-root"></div>*@
+    @*<script type="text/javascript" src='@Context.GetLink("/assets/js/hollowinsidemaintenance.body.bundle.min.js")'></script>*@
+    <main role="main" class='@(Document.Keys.Contains("CenteredLayout") ? "mt-md-auto" : "")'>
+        @RenderBody()
+    </main>
+    <footer class="bg-main text-center py-3">
+        <p class="small mb-0">© @DateTime.Today.Year Hollow Inside</p>
+    </footer>
+    @*<script type="text/javascript" src='@Context.GetLink("/assets/js/hollowinsidemaintenance.bundle.min.js")'></script>*@
+</body>
+</html>
