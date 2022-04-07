@@ -20,7 +20,22 @@ $headwound:         "head-wound";
 // Theme map
 $themes: (
     $headwound: (
-        "gray":       $gray-stone,
+        "alpha":      #dacd71,
+        "beta":       #3d5f61,
+        "gamma":      #b7b79b,
+        "delta":      #48354b,
+        "epsilon":    #5d2f39,
+        "pink":       #f18c78,
+        "red":        #dd434b,
+        "orange":     #df6540,
+        "yellow":     #f3ca5e,
+        "green":      #b7b79b,
+        "cyan":       #3d5f61,
+        "blue":       #21496d,
+        "purple":     #48354b,
+        "magenta":    #5d2f39,
+        "gray":       #3b3a38,
+        "brown":      #fcdfbf,
         "white":      $white-marshmallow,
         "black":      $black-jet,
         "main":       $black-jet,
@@ -38,6 +53,11 @@ $themes: (
 $btn-border-radius:     0;
 $btn-border-radius-sm:  0;
 $btn-border-radius-lg:  0;
+
+// Forms
+$input-border-radius:       0;
+$input-border-radius-sm:    0;
+$input-border-radius-lg:    0;
 
 // Borders
 $border-color:          var(--#{$variable-prefix}gamma);

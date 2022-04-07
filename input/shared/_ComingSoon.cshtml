@@ -1,9 +1,27 @@
 <section class="pt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 mx-auto text-center">
+        <div class="row mb-3">
+            <div class="col-md-9 col-lg-8 mx-auto text-center">
                 <img class="w-90-percent" src='@Context.GetLink("/assets/images/logo-dark.svg")' alt="Hollow Inside" title="Hollow Inside" />
                 <h1 class="mt-3">WE'RE BACK. COMING SOON.</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-11 col-sm-8 col-lg-4 mx-auto text-center">
+            @if (Document.GetString("Title").Contains("Success"))
+            {
+                <p class="lead">Success! You will be notified when more information becomes available.</p>
+            }
+            else
+            {
+                <form name="coming-soon" method="POST" data-netlify="true" action="/success" netlify-honeypot="bot-field">
+                    <p class="d-none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+                    <div class="input-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" aria-label="Email Address" required>
+                        <button class="btn btn-epsilon" type="submit">Notify Me</button>
+                    </div>
+                </form>
+            }
             </div>
         </div>
     </div>
