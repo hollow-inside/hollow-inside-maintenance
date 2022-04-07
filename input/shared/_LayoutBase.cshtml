@@ -2,8 +2,8 @@
 <html lang="en" data-sh-theme="head-wound" data-sh-theme-mode="dark">
 <head>
     @{
-        string title = Document.Keys.Contains(Keys.Title) ? "Hollow Inside | " + Document.GetString(Keys.Title) : "Hollow Inside";
-        string description = Document.ContainsKey(Keys.Excerpt) ? Document.GetString(Keys.Excerpt) : "Coming Soon";
+        string title = Document.Keys.Contains(Keys.Title) ? "Hollow Inside | " + Document.GetString(Keys.Title) : "Official Website";
+        string description = Document.ContainsKey(Keys.Excerpt) ? Document.GetString(Keys.Excerpt) : "The official website for the band Hollow Inside.";
         string ogImage = Document.ContainsKey("OgImage") ? Document.GetString("OgImage") : "hollow-inside-og.png";
         string baseUrl = Context.GetLink().TrimEnd('/');
     }
@@ -21,8 +21,8 @@
     <meta property="og:url" content="@baseUrl@Document.GetLink()" />
     @* Twitter Card data *@
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@@hollowinsideofficial">
-    <meta name="twitter:creator" content="@@hollowinsideofficial">
+    <meta name="twitter:site" content="@@HollowInside316">
+    <meta name="twitter:creator" content="@@HollowInside316">
     @* Apple Touch and Favicons *@
     <link rel="icon" type="image/png" sizes="16x16" href='@baseUrl/favicon-16x16.png'>
     <link rel="icon" type="image/png" sizes="32x32" href='@baseUrl/favicon-32x32.png'>
